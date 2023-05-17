@@ -1,11 +1,12 @@
 import React from "react";
-import { Count, User } from "../index";
+import { Count, User, Posts } from "../index";
 
 export function App() {
   return (
     <div>
-      <Count />
-      <User />
+      {/* <Count />
+      <User /> */}
+      <Posts />
     </div>
   );
 }
