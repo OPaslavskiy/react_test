@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Count.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -10,13 +10,19 @@ export function Count() {
   const number = useSelector((state) => state.counterReducer.count);
   const dispatch = useDispatch();
 
-  const handelMinesClick = () => dispatch(countMinesAction());
-  const handelPlusClick = () => dispatch(countPlusAction());
+  const [input, setInput] = useState("");
 
-  console.log(`number`, number);
+  const handelMinesClick = () => dispatch(countMinesAction(input));
+  const handelPlusClick = () => dispatch(countPlusAction(input));
+
+  const onInputChange = (e) => {
+    setInput(e.target.value);
+  };
+
+  console.log(`number`, input);
   return (
     <div className={styles.counter}>
-      <input className={styles.input} type="text" />
+      <input onChange={onInputChange} className={styles.input} type="number" />
       <div>
         <button onClick={handelMinesClick} className={styles.mines}>
           -

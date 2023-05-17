@@ -8,10 +8,10 @@ export const counterReducer = (state = initialState, action) => {
   switch (action.type) {
     case DECREMENT_COUNT:
       return {
-        count: state.count - 1,
+        count: state.count - +action.payload,
       };
     case INCREMENT_COUNT:
-      return { count: state.count + 5 };
+      return { count: state.count + +action.payload };
 
     default:
       return state;
