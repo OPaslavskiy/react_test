@@ -1,10 +1,11 @@
 import React from "react";
-import { Count } from "../index";
+import { Count, User } from "../index";
 
 export function App() {
   return (
     <div>
       <Count />
+      <User />
     </div>
   );
 }
