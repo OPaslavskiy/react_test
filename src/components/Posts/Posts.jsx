@@ -9,17 +9,18 @@ export function Posts() {
   console.log(posts);
 
   useEffect(() => {
-    dispatch(postsAction());
+    dispatch(postsAction("users"));
   }, []);
 
   return (
     <ul>
-      {posts.map(({ title, body, id }) => (
+      {/* {posts.map(({ title, body, id }) => (
         <li key={id}>
           <h2>{title}</h2>
           <p>{body}</p>
         </li>
-      ))}
+      ))} */}
+      fgjgjtfg
     </ul>
   );
 }
